@@ -1,35 +1,94 @@
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
-
         <title>Nathan's CS130 Homepage</title>
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <header>
-            <h1>My CS130 Homepage</h1>
+            <h1>Nathan's CS130 Homepage</h1>
         </header>
         <main>
             <section id="tutorials">
                 <h2>Tutorials</h2>
-                <ul>
-                    <li><a href="tutorial01/index.html">Tutorial 1</a></li>
-                    <li><a href="tutorial03/index.html">Tutorial 3</a></li>
-                </ul>
+                <div class="flexcards">
+                    <div class="card">
+                        <a href="tutorial01/index.html">
+                            <h3>Tutorial 1</h3>
+                        </a>
+                        <iframe src="tutorial01/index.html" title="Tutorial 1" scrolling="no"></iframe>
+                    </div>
+                    <div class="card">
+                        <a href="tutorial03/index.html">
+                            <h3>Tutorial 3</h3>
+                        </a>
+                        <iframe src="tutorial03/index.html" title="Tutorial 3" scrolling="no"></iframe>
+                    </div>
+                </div>
             </section>
+            
             <section id="homework">
                 <h2>Homework</h2>
-                <ul>
-                    <li>Homework 1</li>
-                    <ul>
-                        <li><a href="hw01/01_cssgrid/index.html">Grid Layout</a></li>
-                        <li><a href="hw01/02_flexbox/index.html">Photo Gallery</a></li>
-                    </ul>
-                </ul>
+                <h3 id="hw01heading">Homework 1</h3>
+                <div class="flexcards">
+                    <div class="card">
+                        <a href="hw01/01_cssgrid/index.html">
+                            <h4>Grid Layout</h4>
+                        </a>
+                        <br>
+                        <iframe src="hw01/01_cssgrid/index.html" title="Homework 1: Grid Layout" scrolling="no"></iframe>
+                    </div>
+                    <div class="card">
+                        <a href="hw01/02_flexbox/index.html">
+                            <h4>Photo Gallery</h4>
+                        </a>
+                        <br>
+                        <iframe src="hw01/02_flexbox/index.html" title="Homework 1: Photo Gallery" scrolling="no"></iframe>
+                    </div>
+                </div>
             </section>
+            
             <section id="inspiration">
                 <h2>Design Inspiration</h2>
+                <div class="flexcards">
+                    <div class="listcard">
+                        <a href="https://nova.app" title="Panic - Nova">Nova website</a>
+                        <br>
+                        <iframe src="https://nova.app" title="Panic - Nova" scrolling="no"></iframe>
+                    </div>
+                    <div class="listcard">
+                        <a href="https://hector.me/aqueux" title="Aqueux - Dynamic wallpapers based on a classic">Aqueux website</a>
+                        <br>
+                        <iframe src="https://hector.me/aqueux" title="Aqueux - Dynamic wallpapers based on a classic" scrolling="no"></iframe>
+                    </div>
+                    <div class="listcard">
+                        <a href="https://www.apple.com/imac-24/" title="iMac 24-inch - Apple">iMac website</a>
+                        <br>
+                        <iframe src="https://www.apple.com/imac-24/" title="iMac 24-inch - Apple" scrolling="no"></iframe>
+                    </div>
+                    <div class="listcard">
+                        <a href="https://codepen.io/5t3ph/pen/rNjoyQB" title="Card Layouts with Container Queries, nth-child, and CSS custom variables">Card Layouts CodePen</a>
+                        <br>
+                        <iframe height="265" style="width: 100%;" scrolling="no" title="Card Layouts with Container Queries, nth-child, and CSS custom variables" src="https://codepen.io/5t3ph/embed/rNjoyQB?height=265&theme-id=light&default-tab=html,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                            See the Pen <a href='https://codepen.io/5t3ph/pen/rNjoyQB'>Card Layouts with Container Queries, nth-child, and CSS custom variables</a> by Stephanie Eckles
+                            (<a href='https://codepen.io/5t3ph'>@5t3ph</a>) on <a href='https://codepen.io'>CodePen</a>.
+                        </iframe>
+                    </div>
+                    <div class="listcard">
+                        <a href="https://codepen.io/yancy/pen/gBLLxz" title="Info Cards Concept">Info Cards Concept CodePen</a>
+                        <br>
+                        <iframe height="265" style="width: 100%;" scrolling="no" title=" Info Cards Concept" src="https://codepen.io/yancy/embed/gBLLxz?height=265&theme-id=light&default-tab=css,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                            See the Pen <a href='https://codepen.io/yancy/pen/gBLLxz'> Info Cards Concept</a> by Yancy Min
+                            (<a href='https://codepen.io/yancy'>@yancy</a>) on <a href='https://codepen.io'>CodePen</a>.
+                        </iframe>
+                    </div>
+                </div>
+                <h2>Design Values</h2>
+                <div class="valuescards">
+                    <div class="value1">Warmth</div>
+                    <div class="value2">Simplicity</div>
+                    <div class="value3">Enthusiasm</div>
+                </div>
             </section>
         </main>
     </body>

@@ -1,22 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Work+Sans:ital@0;1&display=swap');
+
 * {
     box-sizing: border-box;
 }
 
 body {
     margin: 0px;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
+    background-color: #ece2d0;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Work Sans', sans-serif;
+}
+
+h1 {
+    color: #29503b;
+    font-size: 3em;
+    padding-left: 10px;
+}
+
+h2 {
+    color: #7e240b;
+    font-size: 2.3em;
+    padding-left: 10px;
+    text-align: center;
+}
+
+h3 {
+    color: #81717a;
+}
+
+h4 {
+    color: #81717a;
+}
+
+#hw01heading {
+    margin-left: 8px;
 }
 
 header, section {
-    padding: 20px;
+    padding: 10px;
 }
 
-p, li {
-    line-height: 1.5em;
+header {
+    background-color: #e9cf9f8a;
+    text-align: center;
+}
+
+.flexcards {
+    display: flex;
+    align-items: normal;
+    justify-content: flex-start;
+}
+
+.card {
+    margin: 10px;
+}
+
+.listcard {
+    margin: 20px;
+}
+
+#inspiration .flexcards {
+    flex-wrap: wrap;
+}
+
+iframe {
+    border: solid 7px #7e240b;
+    border-radius: 6px;
 }
 
 #inspiration {
     background-color: #f0f0f0;
     padding-top: 40px;
     padding-bottom: 40px;
+}
+
+.valuescards {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 3em;
+    text-align: center;
+}
+
+.value1 {
+    color: #7e240b;
+}
+
+.value2 {
+    color: #29503b;
+}
+
+.value3 {
+    color: #81717a;
 }
