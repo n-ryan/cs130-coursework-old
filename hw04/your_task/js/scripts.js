@@ -16,10 +16,10 @@ const search = (ev) => {
     }
 }
 
-const getTracks = (term) => {
+const getArtist = (term) => {
     console.log(`
-        get tracks from spotify based on the search term
-        "${term}" and load them into the #tracks section 
+        get artists from spotify based on the search term
+        "${term}" and load the first artist into the #artist section 
         of the DOM...`);
 
     const queryURL = `https://www.apitutor.org/spotify/simple/v1/search?type=artist&q=${term}`
@@ -54,12 +54,49 @@ const getAlbums = (term) => {
         get albums from spotify based on the search term
         "${term}" and load them into the #albums section 
         of the DOM...`);
+
+    const queryURL = `https://www.apitutor.org/spotify/simple/v1/search?type=album&q=${term}`;
+    fetch(queryURL)
+        .then((response) => {
+            return response.json();
+        })
+        .then((albums) => {
+            if (albums.length !== 0) {
+                let albumList = ``;
+                for (const album of albums) {
+                    albumList += `
+                    <section class="album-card" id="${album.id}">
+                        <div>
+                            <img src="${album.image_url}">
+                            <h3>${album.name}</h3>
+                            <div class="footer">
+                                <a href="${album.spotify_url}" target="_blank">
+                                    view on spotify
+                                </a>
+                            </div>
+                        </div>
+                    </section>`;
+                };
+                document.querySelector('#albums').innerHTML = albumList;
+            } else {
+                document.querySelector('#albums').innerHTML = `No albums matching "${term}" were found.`;
+            };
+        });
 };
 
-const getArtist = (term) => {
+const playTrackPreview = (ev) => {
+    const selectedTrack = ev.currentTarget;
+    const previewURL = selectedTrack.dataset.previewTrack;
+    const trackInfo = document.querySelector('footer .track-item');
+    trackInfo.innerHTML = selectedTrack.innerHTML;
+    audioPlayer.setAudioFile(previewURL);
+    audioPlayer.play();
+};
+
+const getTracks = (term) => {
     console.log(`
-        get artists from spotify based on the search term
-        "${term}" and load the first artist into the #artist section 
+        get tracks from spotify based on the search term
+        "${term}" and load them into the #tracks section 
         of the DOM...`);
     
     const queryURL = `https://www.apitutor.org/spotify/simple/v1/search?type=track&q=${term}`
@@ -73,7 +110,7 @@ const getArtist = (term) => {
                 let trackList = ``;
                 for (const track of trackResults) {
                     trackList += `
-                    <section class="track-item preview" data-preview-track="${track.preview_url}">
+                    <section class="track-item preview" data-preview-track="${track.preview_url}" onclick="playTrackPreview(event)">
                         <img src="${track.album.image_url}">
                         <i class="fas play-track fa-play" aria-hidden="true"></i>
                         <div class="label">
